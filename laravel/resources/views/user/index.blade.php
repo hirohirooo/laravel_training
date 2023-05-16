@@ -11,7 +11,14 @@
 <h1>User一覧</h1>
 <a href="{{route('user.create')}}">ユーザーcreate画面にうつる</a>
 @foreach($users as $user)
-    <p><a href="{{route('user.edit',['id'=>$user->id])}}">{{$user->name}}</a></p>
+    <p>
+        <a href="{{route('user.edit',['id'=>$user->id])}}">{{$user->name}}</a>
+        <form action="{{route('user.delete',['id'=>$user->id])}}" method="post">
+        @method('delete')
+        @csrf
+        <button>削除する</button>
+    </form>
+    </p>
 @endforeach
 </body>
 </html>
