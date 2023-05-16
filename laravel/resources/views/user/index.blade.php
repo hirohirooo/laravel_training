@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+<h2>現在{{\Illuminate\Support\Facades\Auth::user()->name}}としてログインしています</h2>
 <h1>User一覧</h1>
 <a href="{{route('user.create')}}">ユーザーcreate画面にうつる</a>
 @foreach($users as $user)

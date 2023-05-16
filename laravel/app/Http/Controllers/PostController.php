@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -20,6 +21,17 @@ class PostController extends Controller
             'title'=>$request["title"],
             'text'=>$request["text"],
             'user_id'=>$request["user_id"]
+        ]);
+        return redirect()->route('post.index');
+    }
+    public function createFromUser(){
+        return view('post.createFromUser');
+    }
+    public function storeFromUser(Request $request){
+        Post::create([
+            'title'=>$request["title"],
+            'text'=>$request["text"],
+            'user_id'=>Auth::user()->id
         ]);
         return redirect()->route('post.index');
     }
