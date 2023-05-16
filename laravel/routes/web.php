@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
-
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +29,5 @@ Route::delete('users/{id}',[UserController::class,'delete'])->name('user.delete'
 Route::get('/posts',[PostController::class,'index'])->name('post.index');
 Route::get('posts/create',[PostController::class,'create'])->name('post.create');
 Route::post('posts',[PostController::class,"store"])->name('post.store');
+Route::get('login',[LoginController::class,'show'])->name('login');
+Route::post('login',[LoginController::class,'login'])->name('login.post');

@@ -8,16 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-<h1>create画面</h1>
-<form action="{{route('user.store')}}" method="post">
+<h1>ログイン画面</h1>
+<form action="{{route('login.post')}}" method="post">
     @csrf
-    <label for="name">名前</label>
-    <input id="name" name="name" type="text">
     <label for="email">メールアドレス</label>
-    <input id="email" name="email" type="email">
-    <label for="name">パスワード</label>
-    <input id="password" name="password" type="password">
-    <button>送信する</button>
+    <input id="email" type="email" name="email">
+    <label for="password">パスワード</label>
+    <input id="password" type="password" name="password">
+    <button>送信</button>
 </form>
 </body>
 </html>
