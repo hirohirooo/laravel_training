@@ -17,5 +17,8 @@ class UserTableSeeder extends Seeder
         DB::table('users')->insert(
             ['name'=>'sdb太郎']
         );
+        DB::table('users')->insert(
+            ['name'=>'sdb花子']
+        );
     }
 }
