@@ -32,4 +32,9 @@ class UserController extends Controller
         $user->save();
         return redirect()->route('user.index');
     }
+    public function delete(Request $request){
+        $user = User::find($request['id']);
+        $user->delete();
+        return redirect()->route('user.index');
+    }
 }
