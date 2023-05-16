@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-
+use App\Http\Requests\CreateUserRequest;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -16,7 +16,11 @@ class UserController extends Controller
     public function create(){
         return view('user.create');
     }
-    public function store(Request $request){
+    public function store(CreateUserRequest $request){
+//        $request->validate([
+//            'name'=>'required',
+//        ]);
+
         User::create([
             'name' => $request['name'],
             'email'=> $request['email'],
